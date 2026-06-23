@@ -1,0 +1,67 @@
+* { box-sizing: border-box; }
+body { margin: 0; }
+
+@keyframes memeMarquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes wobble {
+  0%, 100% { transform: rotate(-2deg); }
+  50%      { transform: rotate(2deg); }
+}
+@keyframes shake {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-4px, 2px); }
+  40% { transform: translate(4px, -2px); }
+  60% { transform: translate(-3px, -2px); }
+  80% { transform: translate(3px, 2px); }
+}
+
+.meme-cap {
+  font-family: 'Anton', Impact, sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  -webkit-text-stroke: 2.5px #000;
+  paint-order: stroke fill;
+}
+
+/* Tactile "press down" effect for the meme buttons (replaces the old style-active attr) */
+.press { transition: transform .05s ease, box-shadow .05s ease; }
+.press:active { transform: translate(3px, 3px) !important; box-shadow: none !important; }
+
+/* Project card hover lift (replaces the old style-hover attr) */
+.card { transition: transform .12s ease, box-shadow .12s ease; }
+.card:hover { transform: translate(-2px, -2px); box-shadow: 9px 9px 0 #000 !important; }
+
+/* ── Mobile responsive ──────────────────────────────────────────────────────
+   The page is built with inline styles, so these overrides use !important to
+   win over the inline `style` attributes on tablets/phones. */
+@media (max-width: 860px) {
+  .topbar { padding: 12px 16px !important; }
+  .topbar-nav { flex-wrap: wrap !important; justify-content: flex-end !important; gap: 8px !important; }
+
+  .hero { padding: 40px 22px 28px !important; gap: 28px !important; }
+  .hero-col { min-width: 0 !important; }
+
+  /* generous desktop side padding -> tighter on small screens */
+  .sec { padding-left: 22px !important; padding-right: 22px !important; }
+
+  .ideas-grid { grid-template-columns: 1fr 1fr !important; }
+
+  .proj-grid { grid-template-columns: 1fr !important; }
+  .proj-grid > .card { margin-top: 0 !important; }
+
+  /* career rows stack instead of sitting in 3 columns */
+  .exp-row { flex-direction: column !important; gap: 6px !important; }
+  .exp-row > div { width: auto !important; flex: none !important; max-width: 100% !important; }
+
+  /* the hover lift can leave cards stuck "lifted" on touch screens */
+  .card:hover { transform: none; box-shadow: 7px 7px 0 #000 !important; }
+}
+
+@media (max-width: 560px) {
+  .ideas-grid { grid-template-columns: 1fr !important; }
+  .sec { padding-left: 16px !important; padding-right: 16px !important; }
+  .floating-fah { width: 64px !important; height: 64px !important; bottom: 16px !important; right: 16px !important; }
+  .stonks { display: none !important; }
+}
