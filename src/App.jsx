@@ -319,6 +319,9 @@ export default function App() {
           >
             <span
               className="press"
+              onClick={() =>
+                document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
+              }
               style={{
                 fontFamily: "'Anton', Impact, sans-serif",
                 fontSize: 18,
@@ -586,8 +589,11 @@ export default function App() {
             <div style={{ fontFamily: "'Anton', Impact, sans-serif", fontSize: 20, lineHeight: 1.05 }}>
               WHICH IS THE BIGGEST W?
             </div>
-            <span
+            <a
               className="press"
+              href={SOCIAL_LINKS.linkedin || '#'}
+              target="_blank"
+              rel="noreferrer"
               style={{
                 alignSelf: 'flex-start',
                 marginTop: 10,
@@ -596,13 +602,14 @@ export default function App() {
                 fontSize: 13,
                 background: '#000',
                 color: '#ffe600',
+                textDecoration: 'none',
                 padding: '8px 14px',
                 borderRadius: 10,
                 cursor: 'pointer',
               }}
             >
               tell me ↗
-            </span>
+            </a>
           </div>
         </div>
       </div>
