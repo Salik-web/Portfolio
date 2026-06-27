@@ -13,7 +13,7 @@ const PROJECT_LINKS = {
   textToSql: { live: 'https://text-to-sql-agent-neon.vercel.app/', code: 'https://github.com/Salik-web/text-to-sql-agent' },
   nba: { code: 'https://github.com/Salik-web/nba-analytics-dashboard' },
   researchAgent: { live: 'https://research-agent-tau-henna.vercel.app/', code: 'https://github.com/Salik-web/Research-Agent' },
-  clipFactory: { code: 'https://github.com/Salik-web' },
+  clipFactory: { code: 'https://github.com/Salik-web/Long-to-short-videos-youtube' },
 }
 
 // ── SOCIAL + RESUME ────────────────────────────────────────────────────────
