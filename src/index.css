@@ -26,7 +26,12 @@ body { margin: 0; }
 }
 
 /* Tactile "press down" effect for the meme buttons (replaces the old style-active attr) */
-.press { transition: transform .05s ease, box-shadow .05s ease; }
+.press {
+  transition: transform .05s ease, box-shadow .05s ease;
+  user-select: none;           /* rapid/double clicks no longer select the button text */
+  -webkit-user-select: none;   /* Safari / older Chrome */
+  -webkit-touch-callout: none; /* no iOS long-press popup */
+}
 .press:active { transform: translate(3px, 3px) !important; box-shadow: none !important; }
 
 /* Project card hover lift (replaces the old style-hover attr) */
