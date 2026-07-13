@@ -70,3 +70,87 @@ body { margin: 0; }
   .floating-fah { width: 64px !important; height: 64px !important; bottom: 16px !important; right: 16px !important; }
   .stonks { display: none !important; }
 }
+
+/* ════════════════════════════════════════════════════════════════════════════
+   EDITORIAL PAGE (#/editorial)
+   ════════════════════════════════════════════════════════════════════════════ */
+.editorial a { color: #0a0a0a; text-decoration: none; }
+.editorial a:hover { opacity: 0.55; }
+.editorial ::selection { background: #0a0a0a; color: #fff; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.nav-link { position: relative; padding-bottom: 2px; }
+.nav-link::after {
+  content: ''; position: absolute; left: 0; right: 100%; bottom: 0;
+  height: 1px; background: #0a0a0a; transition: right 0.25s ease;
+}
+.nav-link:hover { opacity: 1; }
+.nav-link:hover::after { right: 0; }
+
+.proj-row { position: relative; transition: padding-left 0.3s ease; }
+.proj-row::before {
+  content: ''; position: absolute; left: -24px; top: 0; bottom: 0; width: 3px;
+  background: #0a0a0a; transform: scaleY(0); transform-origin: top;
+  transition: transform 0.3s ease;
+}
+.proj-row:hover { padding-left: 16px; }
+.proj-row:hover::before { transform: scaleY(1); }
+
+.direction-card { transition: padding-left 0.3s ease; }
+.direction-card:hover { padding-left: 12px; }
+
+.proj-link { display: inline-flex; align-items: center; gap: 5px; }
+.proj-link .arrow { display: inline-block; transition: transform 0.2s ease; }
+.proj-link:hover .arrow { transform: translate(2px, -2px); }
+
+.cta-outline { transition: background 0.25s ease, color 0.25s ease, opacity 0.25s ease; }
+.cta-outline:hover { background: #0a0a0a; color: #fff; opacity: 1; }
+
+/* ════════════════════════════════════════════════════════════════════════════
+   ENTRANCE / CHOOSER PAGE (#/)
+   ════════════════════════════════════════════════════════════════════════════ */
+@keyframes wob {
+  0%, 100% { transform: rotate(-2deg); }
+  50%      { transform: rotate(2deg); }
+}
+.door { transition: background 0.3s ease; }
+.door-classic:hover { background: #f4f4f4 !important; }
+.door-fun:hover { background: #ffd000 !important; }
+.door-fun-cta { transition: background 0.25s ease, color 0.25s ease; }
+.door-fun:hover .door-fun-cta { background: #2c6fe8; color: #fff; }
+
+/* ── Editorial + Entrance responsive ──────────────────────────────────────── */
+@media (max-width: 860px) {
+  /* editorial */
+  .ed-nav { padding: 18px 20px !important; }
+  .ed-nav-links { gap: 14px 18px !important; }
+  .ed-hero { padding: 84px 20px 60px !important; }
+  .ed-hero-num { font-size: 92px !important; right: 20px !important; top: 28px !important; }
+  .ed-hero-title { font-size: clamp(38px, 11vw, 100px) !important; max-width: none !important; }
+  .ed-section { padding-left: 20px !important; padding-right: 20px !important; }
+  .ed-h2 { font-size: clamp(30px, 8vw, 68px) !important; max-width: none !important; }
+  .ed-tech { display: none !important; }
+  /* project rows use negative side margins on desktop; on mobile that overflows
+     the viewport, so reset them and drop the hover accent bar */
+  .proj-row { gap: 18px !important; margin-left: 0 !important; margin-right: 0 !important; padding: 34px 0 !important; }
+  .proj-row:hover { padding-left: 0 !important; }
+  .proj-row::before { display: none !important; }
+  .ed-directions { grid-template-columns: 1fr !important; }
+  .direction-card { padding: 24px 0 0 0 !important; }
+  .direction-card:hover { padding-left: 0 !important; }
+  .ed-exp-row { flex-direction: column !important; gap: 8px !important; }
+  .ed-exp-row > div:first-child { width: auto !important; }
+
+  /* entrance */
+  .ent-header { padding: 48px 22px 32px !important; }
+  .ent-doors { grid-template-columns: 1fr !important; }
+  .door { padding: 52px 24px !important; }
+  .door-classic { border-right: none !important; border-bottom: 1px solid #e5e5e5 !important; }
+  .ent-title { font-size: clamp(34px, 9vw, 60px) !important; }
+  .door-classic-title { font-size: clamp(38px, 11vw, 52px) !important; }
+  .door-fun-title { font-size: clamp(44px, 13vw, 64px) !important; }
+}
