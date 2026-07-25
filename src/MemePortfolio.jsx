@@ -958,11 +958,11 @@ export default function MemePortfolio() {
 
         {[
           {
-            when: "AUG '25 → JAN '26",
-            role: 'AI / Machine Learning Intern',
+            when: "FEB '25 → MAR '26",
+            role: 'Full Stack AI Engineer',
             org: 'Dreams Network & Technology · Karachi',
             desc:
-              'AI automation pipelines + ML in a sales-forecasting system; reusable OOP modules that cut new-source integration from days to hours.',
+              'Shipped AI apps end to end — React front, FastAPI back, and the agent/RAG/ML guts in between. Reusable OOP modules that cut new-source integration from days to hours.',
             border: '2px solid #2a2a2a',
             bottom: false,
           },

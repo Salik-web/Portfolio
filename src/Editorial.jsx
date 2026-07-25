@@ -51,10 +51,10 @@ const PROJECTS = [
 
 const EXPERIENCE = [
   {
-    when: 'AUG 2025 TO JAN 2026',
-    role: 'AI / Machine Learning Intern',
+    when: 'FEB 2025 TO MARCH 2026',
+    role: 'Full Stack AI Engineer',
     org: 'DREAMS NETWORK & TECHNOLOGY · KARACHI',
-    desc: 'Built AI automation pipelines and integrated ML into a sales-forecasting system; architected reusable OOP modules that cut new-source integration from days to hours.',
+    desc: 'Built production AI applications end to end: React frontends, FastAPI backends, and LLM agent, RAG, and ML pipelines wired into them. Architected reusable OOP modules that cut new-source integration from days to hours.',
     last: false,
   },
   {
